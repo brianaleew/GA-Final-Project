@@ -17,7 +17,7 @@ All users should be able to:
 - Make a personal profile that features the user's name, body type, color-palette and main/fave/inspo styles
 - Have access to their virtual closet page
 - Be able to add, edit and delete tops, bottoms, and shoes from their closets (maybe accessories(jewelry, hats), jackets, etc outside of MVP...)
-- Make/plan outfits they can access in the outfit page (consists of one top, one bottom, one shoe) (still thinking about this one)
+- Make/plan outfits they can access in the outfit page (consists of one top, one bottom, one shoe) 
 - Have the ability to share their outfits to inspire others! (pinterest kind of feel)
 - Be able to save other people's outfits to their "Style Board" (Stretch maybe?)
 
@@ -63,7 +63,7 @@ All users should be able to:
 - PostgreSQL
 - HTML
 - CSS 
-- Materialize or Bootstrap?
+- Bootstrap/SASS
 
 # Installation Instructions
 TBA
