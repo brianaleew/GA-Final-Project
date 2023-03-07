@@ -51,7 +51,7 @@ All users should be able to:
 
 
 # ERDs (Entity Relationship Diagrams)
-![ERD Image](Images/Erd.png)
+![ERD Image](Images/UpdatedERD.png)
 
 
 
