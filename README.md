@@ -1,10 +1,5 @@
 # GA-Final-Project
 Briana Wright's Capstone for the General Assembly SEI Immersive Program
-
-Your user stories – who are your users, what do they want, and why?
-Your wireframes embedded in the readme – sketches of major views / interfaces in your application
-Anything else from your pitch deck – documentation of your wireframes, user stories, and proposed architecture
-Descriptions of any unsolved problems or major hurdles you had to overcome
 # StyleList 
 
 # Overview
@@ -21,9 +16,45 @@ My target audience is really anyone, but I do believe that people who love/enjoy
 All users should be able to: 
 - Make a personal profile that features the user's name, body type, color-palette and main/fave/inspo styles
 - Have access to their virtual closet page
-- Be able to add, edit, delete tops, bottoms, and shoes to their closets (maybe accessories...)
-- Make outfits they can access in the outfit page (consists of one top, one bottom, one shoe) (still thinking about this one)
--
+- Be able to add, edit and delete tops, bottoms, and shoes from their closets (maybe accessories(jewelry, hats), jackets, etc outside of MVP...)
+- Make/plan outfits they can access in the outfit page (consists of one top, one bottom, one shoe) (still thinking about this one)
+- Have the ability to share their outfits to inspire others! (pinterest kind of feel)
+- Be able to save other people's outfits to their "Style Board" (Stretch maybe?)
+
+# Wireframes 
+
+### Log In 
+![Log in Page](Images/LogIn.png)
+
+### Sign Up 
+![Sign up Page](Images/SignUp.png)
+
+### Profile Page
+![Profile Page](Images/ProfilePage.png)
+
+### Virtual Closet
+![Virtual Closet Page](Images/VirtualCloset.png)
+
+### Clothing Index
+![Clothing Index WireFrame](Images/ClothingIndex.png)
+
+### Style Board 
+![Style Board Page](Images/StyleBoard.png)
+
+### Clothing Form
+![Clothing Form Page](Images/ClothingForm.png)
+
+### Homepage 
+![Homepage](Images/HomePage.png)
+
+
+
+
+# ERDs (Entity Relationship Diagrams)
+![ERD Image](Images/Erd.png)
+
+
+
 
 # Technologies Used 
 
