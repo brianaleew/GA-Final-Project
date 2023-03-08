@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User 
 from datetime import date 
-# from django.urls import reverse 
+from django.urls import reverse 
 
 # Tuples for Apparel Model will be here
 TYPES = (
@@ -28,6 +28,9 @@ class Apparel(models.Model):
         choices = TYPES, 
         default = TYPES[0][0]
     )
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'apparel_id': self.id})
 
 
 # Outfit Model 
