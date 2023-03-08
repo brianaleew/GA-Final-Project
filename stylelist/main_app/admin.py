@@ -2,6 +2,6 @@ from django.contrib import admin
 from .models import Apparel, Outfit
 
 # Register your models here.
-admin.site(Apparel)
+admin.site.register(Apparel)
 
-admin.site(Outfit)
+admin.site.register(Outfit)

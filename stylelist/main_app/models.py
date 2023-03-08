@@ -21,7 +21,8 @@ class Apparel(models.Model):
     brand = models.CharField(max_length=40)
     color = models.CharField(max_length=30)
     size = models.CharField(max_length=40)
-    img = models.ImageField
+    img = models.ImageField(default='images/img-error.png')
+    style = models.CharField(max_length=70, default='not specified')
     type = models.CharField(
         max_length=1,
         choices = TYPES, 
