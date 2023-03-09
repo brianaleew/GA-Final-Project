@@ -7,15 +7,17 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 def home(request):
     return render(request, 'home.html')
 
+
+# APPAREL VIEWS
 def apparels_index(request):
     apparels = Apparel.objects.all()
 
     return render(request, 'apparels/index.html', { 'apparels': apparels})
 
-# def apparels_detail(request, apparel_id):
-#     apparel = Apparel.objects.get(id=apparel_id)
+def apparels_detail(request, apparel_id):
+    apparel = Apparel.objects.get(id=apparel_id)
 
-#     return render(request, 'apparels/detail.html', { 'apparel': apparel })
+    return render(request, 'apparels/detail.html', { 'apparel': apparel })
 
 
 class ApparelCreate(CreateView):
@@ -29,3 +31,10 @@ class ApparelUpdate(UpdateView):
 class ApparelDelete(DeleteView):
     model = Apparel
     success_url = '/apparels/'
+
+
+#OUTFIT VIEWS
+def outfits_index(request):
+    outfits = Outfit.objects.all()
+
+    return render(request, 'outfits/index.html', { 'outfits': outfits})

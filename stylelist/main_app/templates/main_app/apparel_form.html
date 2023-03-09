@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Add to the Closet! </h1>
-    <form action="" method="POST">
+    <form class="form" action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit!" class="btn">
+    </form>
+
+
+    <!-- <form action="" method="POST">
         {% csrf_token %}
         <label for="type" class="form-label">Apparel Type</label>
         <input
@@ -57,5 +66,5 @@
         
 
         <input type="submit" value="Submit Form" class="btn btn-danger">
-    </form>
+    </form> -->
 {% endblock %}
