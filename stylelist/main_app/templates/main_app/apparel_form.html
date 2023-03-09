@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Add to the Closet! </h1>
+    {% if object %}
+        <h1>Edit {{ object.name }}</h1>
+    {% else %}
+        <h1>Add to the Closet! </h1>
+    {% endif %}
     <form class="form" action="" method="POST">
         {% csrf_token %}
         <table>

@@ -30,16 +30,20 @@
 
     </div>
     
-    <div class="container-fluid">
+    <div class="index-container container-fluid">
         
         
         {% for apparel in apparels %}
+        <!-- hanger img -->
+          <div class="index-item-container  ">
+            <h4>{{ apparel.name }}</h4>
+            <h5> {{apparel.brand }} </h5>
+            <!-- need img here -->
 
-        <div>
-          <p>{{ apparel.name }}</p>
-          
-        </div>
 
+          </div>
+        
+        <a href="{% url 'detail' apparel.id %}">View {{ apparel.name }}</a>
         
         {% endfor %}
     </div>

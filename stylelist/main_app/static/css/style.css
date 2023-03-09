@@ -1,4 +1,13 @@
 .index-header {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+.index-container {
+    margin-top: 50px;
+}
+.index-item-container {
+    border: 3px solid black;
+    width: 200px;
+    height: 200px;
 }
