@@ -29,8 +29,13 @@ class Apparel(models.Model):
         default = TYPES[0][0]
     )
 
+    def __str__(self):
+        return f'{self.type} : {self.name}'
+
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'apparel_id': self.id})
+        return reverse('detail', kwargs={'apparel_id': self.id })
+    
+     
 
 
 # Outfit Model 
