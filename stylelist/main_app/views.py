@@ -9,11 +9,12 @@ def home(request):
 
 
 # APPAREL VIEWS
+# display all apparels 
 def apparels_index(request):
     apparels = Apparel.objects.all()
 
     return render(request, 'apparels/index.html', { 'apparels': apparels})
-
+# display one apparel item
 def apparels_detail(request, apparel_id):
     apparel = Apparel.objects.get(id=apparel_id)
 
@@ -24,6 +25,7 @@ class ApparelCreate(CreateView):
     model = Apparel
     fields = ['name', 'brand', 'color', 'size', 'img', 'style', 'type']
 
+# apparels can update everything except the type field
 class ApparelUpdate(UpdateView):
     model = Apparel
     fields = ['name', 'brand', 'color', 'size', 'img', 'style']
@@ -41,7 +43,13 @@ def outfits_index(request):
 
     return render(request, 'outfits/index.html', { 'outfits': outfits})
 
+# GOING TO NEED A USER INDEX OF OUTFITS HERE AFTER USER MODEL IS CREATED!!
 
+# view one outfit 
+def outfits_detail(request, outfit_id):
+    outfit = Outfit.objects.get(id=outfit_id)
+
+    return render(request, 'outfits/detail.html', {'outfit': outfit })
 
 
 

@@ -47,6 +47,12 @@ class Outfit(models.Model):
 
     apparels = models.ManyToManyField(Apparel)
 
+    def __str__(self):
+        return f'{self.name}'
+
+    def get_absolute_url(self):
+        return reverse('outfits_detail', kwargs={'outfit_id': self.id })
+
 
 
 

@@ -10,10 +10,12 @@ urlpatterns = [
     path('apparels/<int:pk>/delete/', views.ApparelDelete.as_view(), name='apparels_delete'),
     # Outfit urls 
     path('outfits/', views.outfits_index, name='outfits_index'),
+    path('outfits/<int:outfit_id>/', views.outfits_detail, name='outfits_detail'),
+
     # association links
     path('outfits/<int:outfit_id>/assoc_apparel/<int:apparel_id>/', views.assoc_apparel, name='assoc_apparel'),
     path('outfits/<int:outfit_id>/unassoc_apparel/<int:apparel_id>/', views.unassoc_apparel, name='assoc_apparel'),
-    
+
 
 
     
