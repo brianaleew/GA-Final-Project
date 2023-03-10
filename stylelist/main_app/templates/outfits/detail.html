@@ -2,8 +2,23 @@
 {% block content %}
 
     <h1>{{outfit.name}}</h1>
-    <h2>{{outfit.event}}</h2>
-    
+    <h2>Made For: {{outfit.event}}</h2>
+        {% if outfit.apparels.count %}
+            {% for apparel in outfit.apparels.all %}
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{apparel.name}}</h4>
+                    </div>
+                </div>
+                <form action="{% url 'unassoc_apparel' outfit.id apparel.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="btn danger" value="Remove Item">
+                </form>
+            {% endfor%}
+        {% endif %}        
+
+
+    <!-- These are the unassoc apparels displayed by carousels and separated by type (look at tuples in models.py for more info) -->
     <div class="apparel-container">
         <h3>Your Tops</h3>
         <div class="carousel" data-flickity='{ "groupCells": true }'>
