@@ -1,8 +1,61 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>outfit detailssss</h1>
-    <h2>{{outfit.name}}</h2>
+    <h1>{{outfit.name}}</h1>
+    <h2>{{outfit.event}}</h2>
+    
+    <div class="apparel-container">
+        <h3>Your Tops</h3>
+        <div class="carousel" data-flickity='{ "groupCells": true }'>
+            {% if apparels.count %}
+                {% for apparel in apparels.all %}
+                    {% if apparel.type == 'T' %}
+                    <div class="carousel-cell">
+                        <div class="card">
+                            <div class="card-title">{{apparel.name}}</div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+
+    <div class="apparel-container">
+        <h3>Your Bottoms</h3>
+        <div class="carousel" data-flickity='{ "groupCells": true }'>
+            {% if apparels.count %}
+                {% for apparel in apparels.all %}
+                    {% if apparel.type == 'B' %}
+                    <div class="carousel-cell">
+                        <div class="card">
+                            <div class="card-title">{{apparel.name}}</div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="apparel-container">
+        <h3>Your Shoes</h3>
+        <div class="carousel" data-flickity='{ "groupCells": true }'>
+            {% if apparels.count %}
+                {% for apparel in apparels.all %}
+                    {% if apparel.type == 'S' %}
+                    <div class="carousel-cell">
+                        <div class="card">
+                            <div class="card-title">{{apparel.name}}</div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
     <a href="{% url 'outfits_update' outfit.id %}">Edit {{outfit.name}}</a>
     <a href="{% url 'outfits_delete' outfit.id %}">Delete {{outfit.name}}</a>
 

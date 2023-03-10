@@ -49,7 +49,11 @@ def outfits_index(request):
 def outfits_detail(request, outfit_id):
     outfit = Outfit.objects.get(id=outfit_id)
 
-    return render(request, 'outfits/detail.html', {'outfit': outfit })
+    id_list = outfit.apparels.all().values_list('id')
+
+    unused_apparels = Apparel.objects.exclude(id__in=id_list)
+
+    return render(request, 'outfits/detail.html', {'outfit': outfit, 'apparels': unused_apparels })
 
 class OutfitCreate(CreateView):
     model = Outfit

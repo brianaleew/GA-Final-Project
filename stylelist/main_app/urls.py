@@ -14,10 +14,13 @@ urlpatterns = [
     path('outfits/create/', views.OutfitCreate.as_view(), name='outfits_create'),
     path('outfits/<int:pk>/update/', views.OutfitUpdate.as_view(), name='outfits_update'),
     path('outfits/<int:pk>/delete/', views.OutfitDelete.as_view(), name='outfits_delete'),
-
     # association links
     path('outfits/<int:outfit_id>/assoc_apparel/<int:apparel_id>/', views.assoc_apparel, name='assoc_apparel'),
     path('outfits/<int:outfit_id>/unassoc_apparel/<int:apparel_id>/', views.unassoc_apparel, name='assoc_apparel'),
+    # user links 
+    # signup 
+    # log in
+    # profile page (going to need edit) --> brings us to recommendations as well(monday task)
 
 
 
