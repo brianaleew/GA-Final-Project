@@ -51,6 +51,18 @@ def outfits_detail(request, outfit_id):
 
     return render(request, 'outfits/detail.html', {'outfit': outfit })
 
+class OutfitCreate(CreateView):
+    model = Outfit
+    fields = ['name', 'date', 'event', 'caption']
+
+class OutfitUpdate(UpdateView):
+    model = Outfit
+    fields = ['name', 'date', 'event', 'caption']
+
+class OutfitDelete(DeleteView):
+    model = Outfit
+    success_url = '/outfits/'
+
 
 
 

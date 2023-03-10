@@ -2,5 +2,8 @@
 {% block content %}
 
     <h1>outfit detailssss</h1>
+    <h2>{{outfit.name}}</h2>
+    <a href="{% url 'outfits_update' outfit.id %}">Edit {{outfit.name}}</a>
+    <a href="{% url 'outfits_delete' outfit.id %}">Delete {{outfit.name}}</a>
 
 {% endblock %}

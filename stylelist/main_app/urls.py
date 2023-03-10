@@ -11,6 +11,9 @@ urlpatterns = [
     # Outfit urls 
     path('outfits/', views.outfits_index, name='outfits_index'),
     path('outfits/<int:outfit_id>/', views.outfits_detail, name='outfits_detail'),
+    path('outfits/create/', views.OutfitCreate.as_view(), name='outfits_create'),
+    path('outfits/<int:pk>/update/', views.OutfitUpdate.as_view(), name='outfits_update'),
+    path('outfits/<int:pk>/delete/', views.OutfitDelete.as_view(), name='outfits_delete'),
 
     # association links
     path('outfits/<int:outfit_id>/assoc_apparel/<int:apparel_id>/', views.assoc_apparel, name='assoc_apparel'),
