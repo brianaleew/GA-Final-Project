@@ -41,3 +41,19 @@ def outfits_index(request):
 
     return render(request, 'outfits/index.html', { 'outfits': outfits})
 
+
+
+
+
+
+
+
+# the assoc apparel func will handle when apparels are added to an outfit
+def assoc_apparel(request, outfit_id, apparel_id):
+    Outfit.objects.get(id=outfit_id).apparels.add(apparel_id)
+    return redirect('detail', outfit_id=outfit_id)
+
+# the unassoc apparel func will handle removing apparels from an outfit 
+def unassoc_apparel(request, outfit_id, apparel_id):
+    Outfit.objects.get(id=outfit_id).apparels.remove(apparel_id)
+    return redirect('detail', outfit_id=outfit_id)

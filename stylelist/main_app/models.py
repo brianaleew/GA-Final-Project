@@ -45,7 +45,7 @@ class Outfit(models.Model):
     event = models.CharField(max_length=40)
     caption = models.CharField(max_length=50)
 
-    clothing = models.ManyToManyField(Apparel)
+    apparels = models.ManyToManyField(Apparel)
 
 
 
