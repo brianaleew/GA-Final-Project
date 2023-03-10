@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import Apparel, Outfit 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-
+from django.conf import settings
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 def home(request):
@@ -59,6 +63,11 @@ class OutfitCreate(CreateView):
     model = Outfit
     fields = ['name', 'date', 'event', 'caption']
 
+    def form_valid(self, form):
+    # self.request.user is assigning the user
+        form.instance.user = self.request.user  
+        return super().form_valid(form)
+
 class OutfitUpdate(UpdateView):
     model = Outfit
     fields = ['name', 'date', 'event', 'caption']
@@ -66,11 +75,6 @@ class OutfitUpdate(UpdateView):
 class OutfitDelete(DeleteView):
     model = Outfit
     success_url = '/outfits/'
-
-
-
-
-
 
 # the assoc apparel func will handle when apparels are added to an outfit
 def assoc_apparel(request, outfit_id, apparel_id):
@@ -81,3 +85,18 @@ def assoc_apparel(request, outfit_id, apparel_id):
 def unassoc_apparel(request, outfit_id, apparel_id):
     Outfit.objects.get(id=outfit_id).apparels.remove(apparel_id)
     return redirect('outfits_detail', outfit_id=outfit_id)
+
+# sign up 
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('index')
+        else:
+            error_message = 'Invalid sign up - try again'
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)

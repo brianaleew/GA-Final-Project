@@ -46,6 +46,7 @@ class Outfit(models.Model):
     caption = models.CharField(max_length=50)
 
     apparels = models.ManyToManyField(Apparel)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name}'
@@ -53,6 +54,14 @@ class Outfit(models.Model):
     def get_absolute_url(self):
         return reverse('outfits_detail', kwargs={'outfit_id': self.id })
 
+# this class extends the built in django User model to add extra  non auth related info 
+# by creating a one to one relation (aka profile model)
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    body_type = models.CharField(max_length=50)
+    color_palette = models.CharField(max_length=50)
+    top_styles = models.CharField(max_length=50)
+    profile_img = models.ImageField
 
 
 

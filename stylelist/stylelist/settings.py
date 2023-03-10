@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'stylelist.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'stylelist',
+        'NAME': 'stylelist2',
     }
 }
 
@@ -124,3 +124,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# login redirect link
+LOGIN_REDIRECT_URL = '/'
+# logout redirect link 
+LOGOUT_REDIRECT_URL = '/'
