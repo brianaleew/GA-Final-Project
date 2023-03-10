@@ -34,7 +34,10 @@ class ApparelDelete(DeleteView):
 
 
 #OUTFIT VIEWS
+
+# this index represents the inspo page (all user outfits will be here)
 def outfits_index(request):
     outfits = Outfit.objects.all()
 
     return render(request, 'outfits/index.html', { 'outfits': outfits})
+
