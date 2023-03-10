@@ -63,5 +63,8 @@ class UserProfile(models.Model):
     top_styles = models.CharField(max_length=50)
     profile_img = models.ImageField
 
+    def get_absolute_url(self):
+        return reverse('user_profile', kwargs={'user_id': self.id })
+
 
 

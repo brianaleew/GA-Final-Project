@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Apparel, Outfit 
+from .models import Apparel, Outfit, User, UserProfile
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.conf import settings
 from django.contrib.auth import login
@@ -86,6 +86,8 @@ def unassoc_apparel(request, outfit_id, apparel_id):
     Outfit.objects.get(id=outfit_id).apparels.remove(apparel_id)
     return redirect('outfits_detail', outfit_id=outfit_id)
 
+
+#USER VIEWS
 # sign up 
 def signup(request):
     error_message = ''
@@ -100,3 +102,8 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
+
+def user_profile(request, user_id):
+    user = User.objects.get(id=user_id)
+
+    return render(request, 'accounts/user_profile.html', {'user': user, })

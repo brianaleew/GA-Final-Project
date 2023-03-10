@@ -18,10 +18,13 @@ urlpatterns = [
     path('outfits/<int:outfit_id>/assoc_apparel/<int:apparel_id>/', views.assoc_apparel, name='assoc_apparel'),
     path('outfits/<int:outfit_id>/unassoc_apparel/<int:apparel_id>/', views.unassoc_apparel, name='unassoc_apparel'),
     # User links
-    # signup 
-    path('accounts/signup/', views.signup, name='signup')
     # log in is handled by django
+    # signup 
+    path('accounts/signup/', views.signup, name='signup'),
     # profile page (going to need edit) --> brings us to recommendations as well(monday task)
+    path('accounts/<int:user_id>/profile/', views.user_profile, name='user_profile'),
+
+
 
 
 
