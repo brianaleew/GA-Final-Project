@@ -107,3 +107,7 @@ def user_profile(request, user_id):
     user = User.objects.get(id=user_id)
 
     return render(request, 'accounts/user_profile.html', {'user': user, })
+
+class ProfileUpdate(UpdateView):
+    model = User
+    fields = ['username', 'date', 'event', 'caption']

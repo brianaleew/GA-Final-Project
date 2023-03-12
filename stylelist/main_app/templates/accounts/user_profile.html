@@ -1,8 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>USER PROFILE</h2>
-    <h3>{{user.username}}</h3>
-    <h4>{{user.userprofile.body_type}}</h4>
-    <h4>{{user.userprofile.colorpalette}}</h4>
+    <div class="container-md profile-container">
+        <div class="row">
+            <div class="profile-header col-1">
+                
+                    <img class="profile-img" src="https://i.pinimg.com/564x/ce/5e/32/ce5e326ee54ae70bd45701179e0c3416.jpg" alt="">
+                    <h4>Welcome Back</h4>
+                    <h2>{{user.username}}</h2>
+                
+                <div class="col">
+                    <h2>another space
+
+                    </h2>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col profile-info">
+                <h3>Body Type:</h3>
+                <h4>{{user.userprofile.body_type}}</h4>
+            </div>
+            <div class="col profile-info">
+                <h3>Color Palette: </h3>
+                <h4>{{user.userprofile.color_palette}}</h4>
+            </div>
+            <div class="col profile-info">
+                <h3>Main Styles: </h3>
+                <h4>{{user.userprofile.top_styles}}</h4>
+            </div>
+
+        </div>
+    </div>
+   
 
 {% endblock %}
