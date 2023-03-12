@@ -7,12 +7,11 @@
                     <img class="profile-img" src="https://i.pinimg.com/564x/ce/5e/32/ce5e326ee54ae70bd45701179e0c3416.jpg" alt="">
                     <h4>Welcome Back</h4>
                     <h2>{{user.username}}</h2>
+                    <a href="{% url 'profile_update' user.id %}">Edit Profile Info</a>
                 
-                <div class="col">
-                    <h2>another space
-
-                    </h2>
-                </div>
+            </div>
+            <div class="col">
+                another space
                 
             </div>
         </div>

@@ -23,7 +23,7 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     # profile page (going to need edit) --> brings us to recommendations as well(monday task)
     path('accounts/<int:user_id>/profile/', views.user_profile, name='user_profile'),
-
+    path('accounts/<int:pk>/update/', views.ProfileUpdate.as_view(), name='profile_update'),
 
 
 

@@ -110,4 +110,4 @@ def user_profile(request, user_id):
 
 class ProfileUpdate(UpdateView):
     model = User
-    fields = ['username', 'date', 'event', 'caption']
+    fields = ['body_type', 'color_palette', 'top_styles', 'profile_img']
