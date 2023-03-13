@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
     <h1>outfit index aka inspo board</h1>
-    <a href="{% url 'outfits_create' %}">Add New Outfit</a>
+    
     {% for outfit in outfits %}
         <h2>{{outfit.name}}</h2>
         <h2>{{outfit.event}}</h2>

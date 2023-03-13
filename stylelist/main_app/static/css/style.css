@@ -27,6 +27,12 @@ body {
 a {
     text-decoration: none;
 }
+
+/* All Pages  */
+.page-title {
+    text-align: center;
+    margin-top: 30px;
+}
 /* Buttons */
 
 .btn-accent {
@@ -53,6 +59,13 @@ a {
 }
 .btn-main:hover {
     background-color: var(--color-accent);
+}
+.btn--white {
+    background-color: rgba(255, 255, 255, 0.714);
+    border: 1px solid black;
+}
+.btn--white a {
+    color: black;
 }
 /* NavBar */
 
@@ -183,4 +196,36 @@ a {
 /* Outfit Index (Inspo) */
 
 
-/*  */
+/* User Outfit Index*/
+.outfit-img {
+    border-radius: 50%;
+    width: 170px;
+}
+/* .outfit-container {
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/7166555/pexels-photo-7166555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+.outfit-header {
+    background-image: url('https://images.pexels.com/photos/1750027/pexels-photo-1750027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 600px;
+    /* justify-self: center; */
+    display: flex;
+    align-items: center;
+}
+.outfit-header-title {
+    background-color: rgba(255, 255, 255, 0.538);
+    margin-top: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.outfit {
+    display: flex;
+    flex-direction: column;
+}
+.outfit-title {
+    justify-self: center;
+}
