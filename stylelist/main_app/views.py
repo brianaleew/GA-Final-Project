@@ -29,6 +29,11 @@ class ApparelCreate(CreateView):
     model = Apparel
     fields = ['name', 'brand', 'color', 'size', 'img', 'style', 'type']
 
+    def form_valid(self, form):
+    # self.request.user is assigning the user
+        form.instance.user = self.request.user  
+        return super().form_valid(form)
+
 # apparels can update everything except the type field
 class ApparelUpdate(UpdateView):
     model = Apparel
@@ -57,7 +62,7 @@ def outfits_user_index(request):
 def outfits_detail(request, outfit_id):
     outfit = Outfit.objects.get(id=outfit_id)
 
-    id_list = outfit.apparels.all().values_list('id')
+    id_list = outfit.apparels.filter(user=request.user).values_list('id')
 
     unused_apparels = Apparel.objects.exclude(id__in=id_list)
 

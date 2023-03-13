@@ -181,9 +181,12 @@ a {
 /* Apparel Index */
 .index-header {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 50px;
 }
+
+
+
 .index-container {
     margin-top: 50px;
 }
@@ -219,6 +222,7 @@ a {
 }
 .outfit-header-title {
     background-color: rgba(255, 255, 255, 0.538);
+    padding: 10px;
     margin-top: 40px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -228,4 +232,19 @@ a {
 }
 .outfit-title {
     justify-self: center;
+}
+
+
+/* OUTFIT DETAIL */
+.outfit-detail-container {
+    background-image: url('https://images.pexels.com/photos/4467127/pexels-photo-4467127.jpeg?auto=compress&cs=tinysrgb&w=600');
+}
+.slides-title {
+    text-align: center;
+    margin: 30px;
+}
+.slide-outfit-card {
+    width: 250px;
+    margin: 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
