@@ -1,36 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container-md profile-container">
-        <div class="row">
-            <div class="profile-header col-1">
-                
-                    <img class="profile-img" src="https://i.pinimg.com/564x/ce/5e/32/ce5e326ee54ae70bd45701179e0c3416.jpg" alt="">
-                    <h4>Welcome Back</h4>
-                    <h2>{{user.username}}</h2>
-                    <a href="{% url 'profile_update' user.id %}">Edit Profile Info</a>
-                
-            </div>
-            <div class="col">
-                another space
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col profile-info">
-                <h3>Body Type:</h3>
-                <h4>{{user.userprofile.body_type}}</h4>
-            </div>
-            <div class="col profile-info">
-                <h3>Color Palette: </h3>
-                <h4>{{user.userprofile.color_palette}}</h4>
-            </div>
-            <div class="col profile-info">
-                <h3>Main Styles: </h3>
-                <h4>{{user.userprofile.top_styles}}</h4>
-            </div>
+    <div class="container">
 
+        <div>
+            <img class="profile-image" src="https://i.pinimg.com/236x/4b/8e/63/4b8e63ee2be0356877598bef7b9f197e.jpg" alt="user profile picture">
+            <h4>{{user.username}}</h4>
+            <h5>Edit Profile</h5>
+        </div>
+
+        <div class="row">
+            <div class="col profile-information">
+                <h2>{{user.username}}'s Style Profile </h2>
+                <h4>Body Type: {{user.userprofile.body_type}}</h4>
+                <h4>Color Palette: {{user.userprofile.color_palette}}</h4>
+                <h4>{{user.userprofile.top_styles}}</h4>
+               
+                
+            </div>
+            <div class="col profile-stylist">
+                <h2>Personal Stylist</h2>
+
+            </div>
         </div>
     </div>
+    
    
 
 {% endblock %}

@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         {% if user.is_authenticated %}
-                            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link" aria-current="page">My Outfits</a></li>
+                            <li class="nav-item"><a href="{% url 'outfits_user_index' %}" class="nav-link" aria-current="page">My Outfits</a></li>
                             <li class="nav-item"><a href="{% url 'user_profile' user.id %}" class="nav-link" aria-current="page">My Profile</a></li>
                             <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link" aria-current="page">Log Out</a></li>
                         {% else %}

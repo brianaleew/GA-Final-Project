@@ -15,7 +15,7 @@ def home(request):
 # APPAREL VIEWS
 # display all apparels 
 def apparels_index(request):
-    apparels = Apparel.objects.all()
+    apparels = Apparel.objects.filter(user=request.user)
 
     return render(request, 'apparels/index.html', { 'apparels': apparels})
 # display one apparel item
@@ -47,7 +47,11 @@ def outfits_index(request):
 
     return render(request, 'outfits/index.html', { 'outfits': outfits})
 
-# GOING TO NEED A USER INDEX OF OUTFITS HERE AFTER USER MODEL IS CREATED!!
+# displays only the users outfits
+def outfits_user_index(request):
+    outfits = Outfit.objects.filter(user=request.user)
+
+    return render(request, 'outfits/user_index.html', { 'outfits': outfits})
 
 # view one outfit 
 def outfits_detail(request, outfit_id):

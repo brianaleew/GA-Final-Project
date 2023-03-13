@@ -28,7 +28,8 @@ class Apparel(models.Model):
         choices = TYPES, 
         default = TYPES[0][0]
     )
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     def __str__(self):
         return f'{self.type} : {self.name}'
 
