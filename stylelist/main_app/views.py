@@ -6,6 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from main_app.forms import ApparelForm 
 # Create your views here.
 
 def home(request):
@@ -28,7 +29,7 @@ def apparels_detail(request, apparel_id):
 class ApparelCreate(CreateView):
     model = Apparel
     fields = ['name', 'brand', 'color', 'size', 'img', 'style', 'type']
-
+    apparel_form = ApparelForm
     def form_valid(self, form):
     # self.request.user is assigning the user
         form.instance.user = self.request.user  
